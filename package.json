@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "homepage": "https://vishalpr013.github.io/Hybrid-RAG-System",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "deploy": "gh-pages -d frontend/dist"
+  }
+}
