@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-cream font-sans antialiased selection:bg-brand-accent/30 selection:text-brand-cream min-h-screen;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(217, 119, 54, 0.05) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(156, 146, 136, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-brand-cream;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-border rounded-full hover:bg-brand-accent/40 transition-colors;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom glow effect */
+.glow-pulse {
+  box-shadow: 0 0 15px rgba(217, 119, 54, 0.15);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(217, 119, 54, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(217, 119, 54, 0.25);
+  }
+}

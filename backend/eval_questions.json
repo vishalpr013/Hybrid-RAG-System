@@ -1,0 +1,209 @@
+[
+  {
+    "question": "Which paper introduced the transformer architecture?",
+    "ground_truth": "The transformer architecture was introduced in the paper Attention Is All You Need."
+  },
+  {
+    "question": "What is the main idea behind retrieval augmented generation?",
+    "ground_truth": "Retrieval Augmented Generation combines document retrieval with language model generation to improve factual accuracy."
+  },
+  {
+    "question": "What problem does hallucination refer to in language models?",
+    "ground_truth": "Hallucination occurs when a language model generates incorrect or fabricated information not grounded in real data."
+  },
+  {
+    "question": "What is the purpose of embeddings in machine learning?",
+    "ground_truth": "Embeddings represent text or data as dense vectors capturing semantic meaning."
+  },
+  {
+    "question": "What is the goal of dense retrieval systems?",
+    "ground_truth": "Dense retrieval uses vector embeddings to retrieve semantically relevant documents."
+  },
+  {
+    "question": "What does BM25 do in information retrieval systems?",
+    "ground_truth": "BM25 ranks documents based on keyword relevance and term frequency statistics."
+  },
+  {
+    "question": "What is the role of a vector database in RAG systems?",
+    "ground_truth": "A vector database stores embeddings and enables efficient similarity search."
+  },
+  {
+    "question": "What does masked language modeling train a model to do?",
+    "ground_truth": "Masked language modeling trains models to predict missing tokens in text."
+  },
+  {
+    "question": "Why is pretraining important for language models?",
+    "ground_truth": "Pretraining allows models to learn general language patterns from large text corpora."
+  },
+  {
+    "question": "What does fine tuning accomplish in machine learning?",
+    "ground_truth": "Fine tuning adapts a pretrained model to a specific downstream task."
+  },
+
+  {
+    "question": "What does self attention allow a transformer to do?",
+    "ground_truth": "Self attention allows each token to attend to other tokens in the same sequence."
+  },
+  {
+    "question": "What is the benefit of multi head attention?",
+    "ground_truth": "Multi head attention allows models to capture multiple relationships in parallel."
+  },
+  {
+    "question": "Why are positional encodings used in transformers?",
+    "ground_truth": "Positional encodings provide information about token order in transformer models."
+  },
+  {
+    "question": "What does the context window represent in language models?",
+    "ground_truth": "The context window is the maximum number of tokens a model can process at once."
+  },
+  {
+    "question": "What is chain of thought prompting?",
+    "ground_truth": "Chain of thought prompting encourages models to generate intermediate reasoning steps."
+  },
+  {
+    "question": "What is graph of thoughts reasoning?",
+    "ground_truth": "Graph of thoughts structures reasoning as a graph of interconnected reasoning steps."
+  },
+  {
+    "question": "What is an AI agent in the context of language models?",
+    "ground_truth": "An AI agent is a system that perceives information and performs actions to achieve goals."
+  },
+  {
+    "question": "What is a multi agent system?",
+    "ground_truth": "A multi agent system consists of multiple agents interacting to solve tasks collaboratively."
+  },
+  {
+    "question": "What is semantic search?",
+    "ground_truth": "Semantic search retrieves documents based on meaning rather than exact keywords."
+  },
+  {
+    "question": "What is hybrid retrieval?",
+    "ground_truth": "Hybrid retrieval combines lexical search such as BM25 with vector search."
+  },
+
+  {
+    "question": "Why are embeddings normalized in vector search?",
+    "ground_truth": "Normalization ensures cosine similarity reflects semantic similarity between embeddings."
+  },
+  {
+    "question": "What does FAISS provide for machine learning systems?",
+    "ground_truth": "FAISS provides efficient similarity search and clustering for dense vectors."
+  },
+  {
+    "question": "Why is chunking necessary in RAG pipelines?",
+    "ground_truth": "Chunking splits documents into smaller pieces to improve retrieval granularity."
+  },
+  {
+    "question": "What is the purpose of overlap when chunking documents?",
+    "ground_truth": "Overlap preserves context between adjacent chunks during document splitting."
+  },
+  {
+    "question": "Why is reranking used in retrieval systems?",
+    "ground_truth": "Reranking improves ranking quality by scoring candidate documents more precisely."
+  },
+
+  {
+    "question": "What does a cross encoder do in reranking?",
+    "ground_truth": "A cross encoder evaluates query document pairs jointly to produce relevance scores."
+  },
+  {
+    "question": "Why are evaluation metrics important in RAG systems?",
+    "ground_truth": "Evaluation metrics measure retrieval quality and answer correctness."
+  },
+  {
+    "question": "What does Mean Reciprocal Rank measure?",
+    "ground_truth": "MRR measures how highly the first relevant document appears in retrieval results."
+  },
+  {
+    "question": "What does Recall@K measure?",
+    "ground_truth": "Recall at K measures whether relevant documents appear in the top K results."
+  },
+  {
+    "question": "What does semantic similarity measure in evaluation?",
+    "ground_truth": "Semantic similarity measures how closely the generated answer matches the ground truth."
+  },
+
+  {
+    "question": "Why are large language models effective at reasoning tasks?",
+    "ground_truth": "Large language models learn complex patterns and reasoning abilities from massive datasets."
+  },
+  {
+    "question": "What is instruction tuning?",
+    "ground_truth": "Instruction tuning trains models to follow natural language instructions."
+  },
+  {
+    "question": "What is prompt engineering?",
+    "ground_truth": "Prompt engineering designs prompts to guide language model outputs."
+  },
+  {
+    "question": "What is a retrieval pipeline?",
+    "ground_truth": "A retrieval pipeline retrieves relevant documents before generating responses."
+  },
+  {
+    "question": "What is context injection in RAG?",
+    "ground_truth": "Context injection provides retrieved documents to the language model before generation."
+  },
+
+  {
+    "question": "What is knowledge grounding in language models?",
+    "ground_truth": "Knowledge grounding ensures model outputs are based on external sources or retrieved documents."
+  },
+  {
+    "question": "What is the role of datasets in training AI models?",
+    "ground_truth": "Datasets provide examples that models learn patterns from during training."
+  },
+  {
+    "question": "Why are large datasets needed for training LLMs?",
+    "ground_truth": "Large datasets allow language models to learn diverse linguistic patterns."
+  },
+  {
+    "question": "What is transfer learning in deep learning?",
+    "ground_truth": "Transfer learning reuses knowledge learned from one task to improve another task."
+  },
+  {
+    "question": "Why is evaluation necessary for AI systems?",
+    "ground_truth": "Evaluation measures system performance and reliability."
+  },
+
+  {
+    "question": "What problem do long context models attempt to solve?",
+    "ground_truth": "Long context models allow language models to process larger amounts of information."
+  },
+  {
+    "question": "Why are retrieval benchmarks important?",
+    "ground_truth": "Retrieval benchmarks measure how well systems retrieve relevant information."
+  },
+  {
+    "question": "What is a research benchmark dataset?",
+    "ground_truth": "A benchmark dataset provides standardized tasks for evaluating models."
+  },
+  {
+    "question": "What does interpretability mean in AI systems?",
+    "ground_truth": "Interpretability refers to understanding how models make decisions."
+  },
+  {
+    "question": "Why is explainability important in machine learning?",
+    "ground_truth": "Explainability helps humans understand model predictions."
+  },
+
+  {
+    "question": "What is the difference between generative and discriminative models?",
+    "ground_truth": "Generative models produce data while discriminative models classify or predict labels."
+  },
+  {
+    "question": "Why are attention mechanisms widely used in modern AI models?",
+    "ground_truth": "Attention mechanisms allow models to focus on relevant information dynamically."
+  },
+  {
+    "question": "What is knowledge retrieval in AI systems?",
+    "ground_truth": "Knowledge retrieval finds relevant information from external sources."
+  },
+  {
+    "question": "Why are large models expensive to train?",
+    "ground_truth": "Large models require significant compute resources and data."
+  },
+  {
+    "question": "What is the purpose of evaluation datasets in RAG systems?",
+    "ground_truth": "Evaluation datasets measure how effectively RAG systems retrieve and answer questions."
+  }
+]

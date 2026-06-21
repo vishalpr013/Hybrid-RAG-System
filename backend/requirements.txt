@@ -1,4 +1,6 @@
-streamlit
+fastapi
+uvicorn
+pydantic
 torch
 faiss-cpu
 rank-bm25
@@ -9,9 +11,9 @@ langchain-core
 langchain-text-splitters
 langchain-groq
 langchain-huggingface
-langchain-huggingface
 pymupdf
 python-dotenv
 numpy
 tqdm
 datasets
+ragas

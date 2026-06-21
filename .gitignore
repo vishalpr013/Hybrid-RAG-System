@@ -12,17 +12,25 @@ __pycache__/
 dist/
 build/
 .eggs/
-
+rag_optimization_case_study.md
 # Virtual environments
 venv/
 .venv/
 env/
 
-# Large data files
+# Large data files & Indexes
 *.pdf
-faiss_index/
-chunks.json
+backend/faiss_index/
+backend/chunks.json
+backend/ragas_evaluation_results.json
 evaluation_results.json
+
+# Node/Vite Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+*.local
+.eslintcache
 
 # Models cache (HuggingFace)
 .cache/
