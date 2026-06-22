@@ -237,18 +237,28 @@ function App() {
       {/* ----------------------------- */}
       {/* HEADER NAVBAR */}
       {/* ----------------------------- */}
-      <header className="border-b border-brand-border py-5 px-6 md:px-12 flex justify-between items-center bg-brand-dark/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="flex items-center space-x-3">
-          <div className="h-2 w-2 rounded-full bg-brand-accent animate-ping" />
-          <span className="font-mono text-xs tracking-widest text-brand-accent uppercase">[RAGNOVA]</span>
-          <h1 className="font-serif text-lg md:text-xl font-semibold select-none tracking-tight font-medium">Research RAG</h1>
+      <header className="border-b border-brand-border py-4 px-4 md:py-5 md:px-12 flex flex-col md:flex-row justify-between items-center bg-brand-dark/80 backdrop-blur-md sticky top-0 z-50 gap-4 md:gap-0">
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <div className="flex items-center space-x-2 md:space-x-3">
+            <div className="h-2 w-2 rounded-full bg-brand-accent animate-ping shrink-0" />
+            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-brand-accent uppercase shrink-0">[RAGNOVA]</span>
+            <h1 className="font-serif text-base sm:text-lg md:text-xl font-semibold select-none tracking-tight font-medium shrink-0">Research RAG</h1>
+          </div>
+          
+          {/* API Connection Indicator for Mobile */}
+          <div className="flex md:hidden items-center space-x-2 bg-brand-card px-3 py-1 rounded-full border border-brand-border select-none shrink-0">
+            <div className={`h-2 w-2 rounded-full ${apiOnline ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+            <span className="font-mono text-[9px] tracking-wider text-brand-muted uppercase">
+              {checkingApi ? 'checking...' : apiOnline ? 'api online' : 'api offline'}
+            </span>
+          </div>
         </div>
         
         {/* Navigation Tabs */}
-        <nav className="flex space-x-1 md:space-x-4 bg-brand-card/60 p-1 rounded-full border border-brand-border">
+        <nav className="flex space-x-1 md:space-x-4 bg-brand-card/60 p-1 rounded-full border border-brand-border w-full md:w-auto justify-center">
           <button
             onClick={() => setActiveTab('chat')}
-            className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
+            className={`px-3 py-1.5 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono transition-all duration-300 ${
               activeTab === 'chat' 
                 ? 'bg-brand-accent text-brand-cream' 
                 : 'text-brand-muted hover:text-brand-cream'
@@ -261,7 +271,7 @@ function App() {
               setActiveTab('dashboard')
               loadStats()
             }}
-            className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
+            className={`px-3 py-1.5 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono transition-all duration-300 ${
               activeTab === 'dashboard' 
                 ? 'bg-brand-accent text-brand-cream' 
                 : 'text-brand-muted hover:text-brand-cream'
@@ -271,7 +281,7 @@ function App() {
           </button>
           <button
             onClick={() => setActiveTab('about')}
-            className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-300 ${
+            className={`px-3 py-1.5 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-mono transition-all duration-300 ${
               activeTab === 'about' 
                 ? 'bg-brand-accent text-brand-cream' 
                 : 'text-brand-muted hover:text-brand-cream'
@@ -281,8 +291,8 @@ function App() {
           </button>
         </nav>
 
-        {/* API Connection Indicator */}
-        <div className="flex items-center space-x-2 bg-brand-card px-3 py-1 rounded-full border border-brand-border select-none">
+        {/* API Connection Indicator for Desktop */}
+        <div className="hidden md:flex items-center space-x-2 bg-brand-card px-3 py-1 rounded-full border border-brand-border select-none shrink-0">
           <div className={`h-2 w-2 rounded-full ${apiOnline ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
           <span className="font-mono text-[10px] tracking-wider text-brand-muted uppercase">
             {checkingApi ? 'checking...' : apiOnline ? 'api online' : 'api offline'}
@@ -293,35 +303,35 @@ function App() {
       {/* ----------------------------- */}
       {/* HERO SECTION */}
       {/* ----------------------------- */}
-      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto w-full border-b border-brand-border/40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section className="py-8 px-4 md:py-12 md:px-12 max-w-7xl mx-auto w-full border-b border-brand-border/40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           {activeTab === 'chat' ? (
             <>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
                 Retrieving knowledge.<br />
                 <span className="italic text-brand-accent font-serif font-normal">Answering papers.</span>
               </h2>
-              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-sm md:text-base">
+              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-xs sm:text-sm md:text-base">
                 Ask anything about AI research papers. This engine uses a hybrid search pipeline, RRF, and Cross-Encoder reranking to ground response synthesis.
               </p>
             </>
           ) : activeTab === 'dashboard' ? (
             <>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
                 Evaluating metrics.<br />
                 <span className="italic text-brand-accent font-serif font-normal">Benchmarking RAG.</span>
               </h2>
-              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-sm md:text-base">
+              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-xs sm:text-sm md:text-base">
                 Inspect accuracy, context recall, context precision, and faithfulness scores assessed through LLM judges in the Ragas framework.
               </p>
             </>
           ) : (
             <>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight font-serif tracking-tight">
                 Understanding design.<br />
                 <span className="italic text-brand-accent font-serif font-normal">Exploring RAGNova.</span>
               </h2>
-              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-sm md:text-base">
+              <p className="mt-4 text-brand-muted max-w-lg leading-relaxed text-xs sm:text-sm md:text-base">
                 Discover the architecture, retrieval mechanisms, evaluation framework, and components powering this research assistant.
               </p>
             </>
@@ -329,27 +339,27 @@ function App() {
         </div>
         
         {/* Monospace Quick Specs */}
-        <div className="flex flex-col space-y-2 border-l border-brand-border pl-6 py-2">
+        <div className="flex flex-col space-y-2 border-l border-brand-border pl-4 sm:pl-6 py-2">
           {activeTab === 'chat' ? (
             <>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[RETRIEVAL]</span> Vector Search (FAISS) + Keyword (BM25)</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[FUSION]</span> Reciprocal Rank Fusion (RRF)</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[RERANKER]</span> cross-encoder/ms-marco-MiniLM-L-6-v2</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[GENERATOR]</span> llama-3.1-8b-instant (Groq)</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[RETRIEVAL]</span> Vector Search (FAISS) + Keyword (BM25)</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[FUSION]</span> Reciprocal Rank Fusion (RRF)</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[RERANKER]</span> cross-encoder/ms-marco-MiniLM-L-6-v2</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[GENERATOR]</span> llama-3.1-8b-instant (Groq)</div>
             </>
           ) : activeTab === 'dashboard' ? (
             <>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[METRICS]</span> Faithfulness, Relevance, Precision, Recall</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[JUDGE_LLM]</span> Llama 3.3 70B (Groq)</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[DATASET]</span> 14 curated evaluation QA pairs</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[STATUS]</span> {evalStatus.status === 'RUNNING' ? 'Running evaluation in background...' : 'Idle'}</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[METRICS]</span> Faithfulness, Relevance, Precision, Recall</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[JUDGE_LLM]</span> Llama 3.3 70B (Groq)</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[DATASET]</span> 14 curated evaluation QA pairs</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[STATUS]</span> {evalStatus.status === 'RUNNING' ? 'Running evaluation in background...' : 'Idle'}</div>
             </>
           ) : (
             <>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[PROJECT]</span> Research RAG & Evaluation Dashboard</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[VERSION]</span> v1.0.0 (Production-Ready)</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[LOCATION]</span> Ahmedabad, India</div>
-              <div className="text-xs font-mono"><span className="text-brand-muted">[LICENSE]</span> MIT / Open Source</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[PROJECT]</span> Research RAG & Evaluation Dashboard</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[VERSION]</span> v1.0.0 (Production-Ready)</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[LOCATION]</span> Ahmedabad, India</div>
+              <div className="text-[11px] sm:text-xs font-mono"><span className="text-brand-muted">[LICENSE]</span> MIT / Open Source</div>
             </>
           )}
         </div>
